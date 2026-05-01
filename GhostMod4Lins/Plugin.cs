@@ -67,6 +67,8 @@ namespace GhostMod4Lins
         }
         internal static void ApplyVisibilitySettings(PlayerGhost ghost)
         {
+            if (ghost.m_owner != null && ghost.m_owner.IsLocal)
+                return;
             bool show = GhostVisiblity.Value;
 
             if (ghost.PlayerRenderers != null)
