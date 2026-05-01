@@ -10,7 +10,7 @@ namespace GhostMod4Lins
 {
     [BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
     public class GhostMod : BaseUnityPlugin
-    {
+    {//Todo: fix local character showing up for me when ghost
         public static ConfigEntry<KeyCode> GhostVisibilityToggle;
         public static ConfigEntry<bool> GhostVisiblity;
         public static ConfigEntry<KeyCode> GhostMuteToggle;
@@ -65,7 +65,6 @@ namespace GhostMod4Lins
                 }
             }
         }
-
         internal static void ApplyVisibilitySettings(PlayerGhost ghost)
         {
             bool show = GhostVisiblity.Value;
@@ -146,7 +145,7 @@ namespace GhostMod4Lins
                 return true;
             }
         }
-
+        
         public static void Notification(string message, string color = "FFFFFF", bool sound = false)
         {
             PlayerConnectionLog connectionLog = UnityEngine.Object.FindAnyObjectByType<PlayerConnectionLog>();
